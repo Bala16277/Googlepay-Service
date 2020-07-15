@@ -1,4 +1,4 @@
-package com.hcl.googlepay;
+/*package com.hcl.googlepay;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class GooglepayApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/

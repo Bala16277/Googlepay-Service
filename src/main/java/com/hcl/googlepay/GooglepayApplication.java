@@ -8,6 +8,10 @@ public class GooglepayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GooglepayApplication.class, args);
+		
+		System.out.println(" Welcome To Transaction Details ");
+		
+		
 	}
 
 }
