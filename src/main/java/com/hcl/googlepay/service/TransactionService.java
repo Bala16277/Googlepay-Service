@@ -11,6 +11,7 @@ import com.hcl.googlepay.repository.TransactionRepository;
 
 import java.time.LocalDateTime; 
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Service
 public class TransactionService {
@@ -36,7 +37,7 @@ public class TransactionService {
 				&& toAccount.getPhoneNumber() == transactionReqDto.getTo_mobile_no()
 				&& fromAccount.getAvailableBallance() >= transactionReqDto.getTransaction_amount()) {
 
-			transaction.setFrom_mobile_no(transactionReqDto.getFrom_mobile_no());
+			transaction.setFromMobileNo(transactionReqDto.getFrom_mobile_no());
 			transaction.setTo_mobile_no(transactionReqDto.getTo_mobile_no());
 			transaction.setTransaction_amount(transactionReqDto.getTransaction_amount());
 			transaction.setTransaction_time(transactionDateTime);
@@ -47,5 +48,18 @@ public class TransactionService {
 		}
 		return transactionRepository.save(transaction);
 	}
+
+
+	
+	
+	public List<Transaction> getByPhoneNumber(int from_mobile_no) {
+		
+		
+		List<Transaction> transactions = transactionRepository.findAllByfromMobileNo(from_mobile_no);
+		List<Transaction> latestTransactions = transactions.subList(transactions.size() -2, transactions.size());
+		return latestTransactions;
+
+	}
+	
 
 }

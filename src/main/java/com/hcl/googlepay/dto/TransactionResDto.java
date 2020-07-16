@@ -1,18 +1,8 @@
-package com.hcl.googlepay.entity;
+package com.hcl.googlepay.dto;
 
-import java.util.Date;
+public class TransactionResDto {
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class Transaction {
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer transaction_id;
+private Integer transaction_id;
 	
 	private int transaction_amount;
 	
@@ -21,14 +11,6 @@ public class Transaction {
 	private int to_mobile_no;
 	
 	private String transaction_time;
-
-	public String getTransaction_time() {
-		return transaction_time;
-	}
-
-	public void setTransaction_time(String transaction_time) {
-		this.transaction_time = transaction_time;
-	}
 
 	public Integer getTransaction_id() {
 		return transaction_id;
@@ -46,8 +28,6 @@ public class Transaction {
 		this.transaction_amount = transaction_amount;
 	}
 
-
-
 	public int getFromMobileNo() {
 		return fromMobileNo;
 	}
@@ -64,5 +44,12 @@ public class Transaction {
 		this.to_mobile_no = to_mobile_no;
 	}
 
+	public String getTransaction_time() {
+		return transaction_time;
+	}
 
+	public void setTransaction_time(String transaction_time) {
+		this.transaction_time = transaction_time;
+	}
+	
 }

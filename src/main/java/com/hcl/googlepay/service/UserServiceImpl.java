@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import com.hcl.googlepay.client.BankingServiceClient;
+import com.hcl.googlepay.clients.AccountClient;
 import com.hcl.googlepay.dto.AccountDto;
 import com.hcl.googlepay.dto.UserRequestDto;
 import com.hcl.googlepay.dto.UserResponseDto;
@@ -24,9 +24,12 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserRepository userRepository;
 
+//	@Autowired
+//	BankingServiceClient bankingServiceClient;
+//	
 	@Autowired
-	BankingServiceClient bankingServiceClient;
-
+	AccountClient accountClient;
+	
 	public UserResponseDto addUser(UserRequestDto userRequestDto) {
 		logger.info("inside user req:  ");
 		UserResponseDto userResponseDto = new UserResponseDto();
@@ -34,8 +37,9 @@ public class UserServiceImpl implements UserService {
 		User user = new User();
 		int phoneNumber = userRequestDto.getPhoneNumber();
 		logger.info("phone:::::::::::::: " + phoneNumber);
-		logger.info(bankingServiceClient.getAccountByPhoneNumber(phoneNumber));
-		AccountDto accountDto = bankingServiceClient.getAccountByPhoneNumber(phoneNumber);
+		//logger.info(bankingServiceClient.getAccountByPhoneNumber(phoneNumber));
+		//AccountDto accountDto = bankingServiceClient.getAccountByPhoneNumber(phoneNumber);
+		AccountDto accountDto = accountClient.getAccounts(phoneNumber);
 		logger.info("Account object: " + accountDto);
 		if (accountDto != null) {
 			Optional<User> users = userRepository.findByPhoneNumber(phoneNumber);

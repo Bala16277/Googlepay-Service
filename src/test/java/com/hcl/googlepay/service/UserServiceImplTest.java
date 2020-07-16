@@ -9,7 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.BeanUtils;
 
-import com.hcl.googlepay.client.BankingServiceClient;
+
 import com.hcl.googlepay.dto.AccountDto;
 import com.hcl.googlepay.dto.UserRequestDto;
 import com.hcl.googlepay.dto.UserResponseDto;
@@ -28,8 +28,8 @@ public class UserServiceImplTest {
 	@Mock
 	UserRepository userRepository;
 
-	@Mock
-	BankingServiceClient bankingServiceClient;
+	//@Mock
+	//BankingServiceClient bankingServiceClient;
 	
 	@Test
 	public void testAddUser() {
@@ -50,7 +50,7 @@ public class UserServiceImplTest {
 		accountDto.setAccountType("savings");
 		accountDto.setBalance(2500);
 		accountDto.setPhoneNumber(970);
-		Mockito.when(bankingServiceClient.getAccountByPhoneNumber(accountDto.getPhoneNumber())).thenReturn(accountDto);
+		//Mockito.when(bankingServiceClient.getAccountByPhoneNumber(accountDto.getPhoneNumber())).thenReturn(accountDto);
 		if(accountDto != null) {
 			BeanUtils.copyProperties(user, userRequestDto);
 			userResponseDto = userServiceImpl.addUser(userRequestDto);
@@ -75,7 +75,7 @@ public class UserServiceImplTest {
 		userRequestDto.setEmail("bala");
 
 		AccountDto accountDto = null;
-		Mockito.when(bankingServiceClient.getAccountByPhoneNumber(userRequestDto.getPhoneNumber())).thenReturn(null);
+		//Mockito.when(bankingServiceClient.getAccountByPhoneNumber(userRequestDto.getPhoneNumber())).thenReturn(null);
 		if(accountDto == null) {
 			userResponseDto = userServiceImpl.addUser(userRequestDto);
 			Assert.assertNotNull(userResponseDto);

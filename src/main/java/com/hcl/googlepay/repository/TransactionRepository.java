@@ -8,5 +8,7 @@ import com.hcl.googlepay.entity.Transaction;
 
 public interface TransactionRepository extends JpaRepository<Transaction, Integer>{
 
+	List<Transaction> findAllByfromMobileNo(int from_mobile_no);
+
 	//List<Transaction> findByTrainingId(int trainingId);
 }
