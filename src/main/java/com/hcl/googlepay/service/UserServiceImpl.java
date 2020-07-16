@@ -13,6 +13,7 @@ import com.hcl.googlepay.dto.AccountDto;
 import com.hcl.googlepay.dto.UserRequestDto;
 import com.hcl.googlepay.dto.UserResponseDto;
 import com.hcl.googlepay.entity.User;
+import com.hcl.googlepay.exception.UserNotFoundException;
 import com.hcl.googlepay.repository.UserRepository;
 
 @Service
@@ -46,11 +47,14 @@ public class UserServiceImpl implements UserService {
 				userRepository.save(user);
 				userResponseDto.setMessage("User created successfully");
 				userResponseDto.setStatusCode(HttpStatus.CREATED.value());
+				//test comments
+				
 			}
 		}
 
 		else {
-			userResponseDto.setMessage("User does not have a account with the associated phone number");
+			Exception exception = new UserNotFoundException("Exception: User does not have a account with the associated phone number");
+			userResponseDto.setMessage(exception.getMessage());
 			userResponseDto.setStatusCode(HttpStatus.NOT_FOUND.value());
 			return userResponseDto;
 		}
