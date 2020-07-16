@@ -40,7 +40,7 @@ public class UserServiceImplTest {
 		user.setFirstName("bala");
 		user.setLastName("k");
 		user.setPassword("bala");
-		user.setPhoneNumber("9705441499");
+		user.setPhoneNumber(970);
 		user.setUserName("bala");
 		user.setEmail("bala");
 
@@ -49,7 +49,7 @@ public class UserServiceImplTest {
 		accountDto.setAccountName("bala");
 		accountDto.setAccountType("savings");
 		accountDto.setBalance(2500);
-		accountDto.setPhoneNumber("9705441499");
+		accountDto.setPhoneNumber(970);
 		Mockito.when(bankingServiceClient.getAccountByPhoneNumber(accountDto.getPhoneNumber())).thenReturn(accountDto);
 		if(accountDto != null) {
 			BeanUtils.copyProperties(user, userRequestDto);
@@ -70,7 +70,7 @@ public class UserServiceImplTest {
 		userRequestDto.setFirstName("bala");
 		userRequestDto.setLastName("k");
 		userRequestDto.setPassword("bala");
-		userRequestDto.setPhoneNumber("9705441498");
+		userRequestDto.setPhoneNumber(9809);
 		userRequestDto.setUserName("bala");
 		userRequestDto.setEmail("bala");
 

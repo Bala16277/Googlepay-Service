@@ -1,7 +1,7 @@
 package com.hcl.googlepay.dto;
 
 public class AccountDto {
-	
+
 	private Integer accountId;
 
 	private String accountName;
@@ -9,16 +9,8 @@ public class AccountDto {
 	private String accountType;
 
 	private int balance;
-	
-	private String phoneNumber;
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+	private int phoneNumber;
 
 	public Integer getAccountId() {
 		return accountId;
@@ -52,5 +44,12 @@ public class AccountDto {
 		this.balance = balance;
 	}
 
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 
 }

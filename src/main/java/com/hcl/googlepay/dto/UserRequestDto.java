@@ -13,7 +13,7 @@ public class UserRequestDto {
 
 	private String email;
 
-	private String phoneNumber;
+	private int phoneNumber;
 
 	
 
@@ -57,13 +57,14 @@ public class UserRequestDto {
 		this.email = email;
 	}
 
-	public String getPhoneNumber() {
+	public int getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	
 	
 
