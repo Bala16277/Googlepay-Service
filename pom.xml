@@ -13,14 +13,26 @@
 	<artifactId>googlepay</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>googlepay</name>
-	<description>Google pay service</description>
+	<description>Google pay services</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+		<sonar.coverage.exclusions>
+       **/config/*,
+        **/dto/*,
+        **/entity/*,
+        **/exception/*
+         <!-- **/repository/*, -->
+       
+    </sonar.coverage.exclusions>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

@@ -3,6 +3,14 @@ package com.hcl.googlepay.dto;
 public class AccountDto {
 
 	private Integer accountId;
+	
+	private int userId;
+	
+	public int acountNumber;
+	
+	private int availableBallance;
+	
+	private int phoneNumber;
 
 	private String accountName;
 
@@ -10,7 +18,34 @@ public class AccountDto {
 
 	private int balance;
 
-	private int phoneNumber;
+	
+	
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getAcountNumber() {
+		return acountNumber;
+	}
+
+	public void setAcountNumber(int acountNumber) {
+		this.acountNumber = acountNumber;
+	}
+
+	public int getAvailableBallance() {
+		return availableBallance;
+	}
+
+	
+	
 
 	public Integer getAccountId() {
 		return accountId;
@@ -40,10 +75,6 @@ public class AccountDto {
 		return balance;
 	}
 
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-
 	public int getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -52,4 +83,13 @@ public class AccountDto {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public void setAvailableBallance(int availableBallance) {
+		this.availableBallance = availableBallance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	
 }
