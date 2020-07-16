@@ -33,6 +33,10 @@ public class TransactionDetails {
 		// TODO Auto-generated constructor stub
 	}
 
+	public TransactionDetails() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Integer getTransaction_Id() {
 		return transaction_Id;
 	}
@@ -73,9 +77,6 @@ public class TransactionDetails {
 		this.transaction_Time = transaction_Time;
 	}
 
-
 	
-	
-
 	
 }

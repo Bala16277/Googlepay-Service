@@ -15,11 +15,12 @@ import com.hcl.googlepay.repository.TransactionRepository;
 @Service
 public class TransactionService {
 	
+	private static Logger logger = Logger.getLogger(TransactionRepository.class);
+	
 	@Autowired
 	TransactionRepository transactionRepository;
 	
 		
-	private static Logger logger=Logger.getLogger(TransactionService.class);
 
 
 	public List<TransactionDetails> getFromPhoneNumber(long fromPhoneNumber) {
@@ -30,7 +31,5 @@ public class TransactionService {
 		return subList;
 
 	}
-
-	
 	
 }
