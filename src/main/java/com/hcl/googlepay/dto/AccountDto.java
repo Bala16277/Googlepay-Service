@@ -12,10 +12,14 @@ public class AccountDto {
 	
 	private int phoneNumber;
 
-	public int getAccountId() {
-		return accountId;
-	}
+	private String accountName;
 
+	private String accountType;
+
+	private int balance;
+
+	
+	
 	public void setAccountId(int accountId) {
 		this.accountId = accountId;
 	}
@@ -40,8 +44,35 @@ public class AccountDto {
 		return availableBallance;
 	}
 
-	public void setAvailableBallance(int availableBallance) {
-		this.availableBallance = availableBallance;
+	
+	
+
+	public Integer getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+
+	public String getAccountName() {
+		return accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public int getBalance() {
+		return balance;
 	}
 
 	public int getPhoneNumber() {
@@ -51,4 +82,14 @@ public class AccountDto {
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	public void setAvailableBallance(int availableBallance) {
+		this.availableBallance = availableBallance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+	
 }
