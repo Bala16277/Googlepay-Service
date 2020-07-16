@@ -28,7 +28,7 @@ public class UserControllerTest {
 		userRequestDto.setFirstName("bala");
 		userRequestDto.setLastName("k");
 		userRequestDto.setPassword("bala");
-		userRequestDto.setPhoneNumber("9705441498");
+		userRequestDto.setPhoneNumber(970);
 		userRequestDto.setUserName("bala");
 		userRequestDto.setEmail("bala");
 		

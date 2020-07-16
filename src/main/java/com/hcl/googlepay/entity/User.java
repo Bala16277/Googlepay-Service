@@ -21,7 +21,7 @@ public class User {
 	
 	private String email;
 	
-	private String phoneNumber;
+	private int phoneNumber;
 
 	public Integer getUserId() {
 		return userId;
@@ -71,12 +71,13 @@ public class User {
 		this.email = email;
 	}
 
-	public String getPhoneNumber() {
+	public int getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	
 }

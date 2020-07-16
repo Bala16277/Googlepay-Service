@@ -11,7 +11,7 @@ public interface BankingServiceClient {
 
 
 		@GetMapping("")
-		public AccountDto getAccountByPhoneNumber(@RequestParam("phoneNumber") String phoneNumber);
+		public AccountDto getAccountByPhoneNumber(@RequestParam("phoneNumber") int phoneNumber);
 
 
 }
