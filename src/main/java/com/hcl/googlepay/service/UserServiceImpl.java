@@ -24,24 +24,21 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	BankingServiceClient bankingServiceClient;
 
-//	@Autowired
-//	AccountRepository accountRepository;
+
 
 	public UserResponseDto addUser(UserRequestDto userRequestDto) {
 		logger.info("inside user req:  ");
-		
 		UserResponseDto userResponseDto = new UserResponseDto();
-		System.out.println("phone::: " + userRequestDto.getPhoneNumber());
+		logger.info("phone::: " + userRequestDto.getPhoneNumber());
 		User user = new User();
 		String phoneNumber = userRequestDto.getPhoneNumber();
 		logger.info("phone:::::::::::::: " + phoneNumber);
-		System.out.println(bankingServiceClient.getAccountByPhoneNumber(phoneNumber));
+		logger.info(bankingServiceClient.getAccountByPhoneNumber(phoneNumber));
 		AccountDto accountDto = bankingServiceClient.getAccountByPhoneNumber(phoneNumber);
-		System.out.println(accountDto);
+		logger.info("Account object: " +accountDto);
 		if (accountDto != null) {
 			BeanUtils.copyProperties(userRequestDto, user);
-			User user1 = userRepository.save(user);
-			System.out.println(user1.getPhoneNumber());
+			userRepository.save(user);
 			userResponseDto.setMessage("User created successfully");
 			userResponseDto.setStatusCode(HttpStatus.CREATED.value());
 
