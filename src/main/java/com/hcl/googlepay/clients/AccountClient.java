@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hcl.googlepay.dto.AccountDto;
 
-@FeignClient(name="http://bank-service:7777/testbank/users/")
-//@FeignClient(value="bank-service", url="http://localhost:7777/testbank/users/")
+//@FeignClient(name="http://bank-service:7777/testbank/users/")
+@FeignClient(value="bank-service", url="http://localhost:7777/testbank/users/")
 public interface AccountClient {
 
 	@GetMapping("/accounts")
